@@ -1,0 +1,3057 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loveyourlips</title>
+
+    <!--
+      - favicon
+    -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+    <!--
+      - custom css link
+    -->
+    <link rel="stylesheet" href="{% static 'app/lips.css' %}">
+
+    <!--
+      - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!--
+      - preload images
+    -->
+    <link rel="preload" as="image" href="{% static 'app/photos/ROMAND-Logo.png' %}">
+
+</head>
+
+<body id="top">
+
+<!--
+  - #HEADER
+-->
+
+<header class="header">
+
+    <div class="alert">
+        <div class="container">
+            <p class="alert-text">You look wonderfull from every sight</p>
+        </div>
+    </div>
+
+    <div class="header-top" data-header>
+        <div class="container">
+
+            <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+            </button>
+
+            <div class="input-wrapper">
+                <input type="search" name="search" placeholder="Search product" class="search-field">
+
+                <button class="search-submit" aria-label="search">
+                    <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+                </button>
+            </div>
+
+            <a href="#" class="logo">
+                <img src="{% static 'app/photos/ROMAND-Logo.png' %}" width="179" height="26" alt="romand">
+            </a>
+
+            <div class="header-actions">
+
+                <a href="{% url 'app:profile' %}" class="header-action-btn" aria-label="user">
+                    <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+                </a>
+
+                <button class="header-action-btn" aria-label="favourite item">
+                    <ion-icon name="star-outline" aria-hidden="true" aria-hidden="true"></ion-icon>
+
+                    <span class="btn-badge">0</span>
+                </button>
+
+                <button class="header-action-btn" aria-label="cart item">
+                    <data class="btn-text" value="0">$0.00</data>
+
+                    <ion-icon name="bag-handle-outline" aria-hidden="true" aria-hidden="true"></ion-icon>
+
+                    <span class="btn-badge">0</span>
+                </button>
+
+            </div>
+
+            <nav class="navbar">
+                <ul class="navbar-list">
+
+                    <li>
+                        <a href="{% url 'app:home' %}" class="navbar-link has-after">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'app:lips' %}" class="navbar-link has-after">Lips</a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'app:eye' %}" class="navbar-link has-after">Eyes</a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'app:about' %}" class="navbar-link has-after">Blog</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'app:faq' %}" class="navbar-link has-after">FAQ</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+
+</header>
+
+
+
+
+
+<!--
+  - #MOBILE NAVBAR
+-->
+
+<div class="sidebar">
+    <div class="mobile-navbar" data-navbar>
+
+        <div class="wrapper">
+            <a href="#" class="logo">
+                <img src="{% static 'app/photos/ROMAND-Logo.png' %}" width="179" height="26" alt="Glowing">
+            </a>
+
+            <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+            </button>
+        </div>
+
+        <ul class="navbar-list">
+
+            <li>
+                <a href="{% url 'app:home' %}" class="navbar-link" data-nav-link>Home</a>
+            </li>
+
+            <li>
+                <a href="{% url 'app:lips' %}" class="navbar-link" data-nav-link>Lips</a>
+            </li>
+
+            <li>
+                <a href="{% url 'app:eye' %}" class="navbar-link" data-nav-link>Eyes</a>
+            </li>
+
+
+            <li>
+                <a href="{% url 'app:about' %}" class="navbar-link" data-nav-link>Blog</a>
+            </li>
+            <li>
+                <a href="{% url 'app:faq' %}" class="navbar-link has-after">FAQ</a>
+            </li>
+
+
+        </ul>
+
+    </div>
+
+    <div class="overlay" data-nav-toggler data-overlay></div>
+</div>
+
+
+
+
+
+<main>
+    <article>
+
+        <!--
+          - #HERO
+        -->
+
+        <!--      <section class="section hero" id="home" aria-label="hero" data-section>-->
+        <!--     -->
+        <!--        <div class="container">-->
+        <!--          <ul class="has-scrollbar">-->
+        <!--            <li class="scrollbar-item">-->
+        <!--              <div class="hero-card">-->
+        <!--                <div class="ccircular-video">-->
+        <!--                  <video autoplay muted loop id="bbackground-video">-->
+        <!--                    <style>.ccircular-video {-->
+        <!--                      width: 1450px;-->
+        <!--                      height: 500px;-->
+        <!--                      border-radius: 2%;-->
+        <!--                      overflow: hidden;-->
+        <!--                    }-->
+        <!--                    -->
+        <!--                    #bbackground-video {-->
+        <!--                      width: 100%;-->
+        <!--                      height: 100%;-->
+        <!--                      object-fit: cover;-->
+        <!--                    }-->
+        <!--                    </style>-->
+        <!--                    <source src="1.webm" type="video/mp4">-->
+        <!--                  </video>-->
+        <!--                </div>-->
+        <!--                -->
+        <!--                <div class="card-content">-->
+        <!--                  <h1 class="h1 hero-title">-->
+        <!--                    Reveal The <br>-->
+        <!--                    Beauty of Skin-->
+        <!--                  </h1>-->
+        <!--                  <p class="hero-text">-->
+        <!--                    Made using clean, non-toxic ingredients, our products are designed for everyone.-->
+        <!--                  </p>-->
+        <!--                  <p class="price">Starting at $7.99</p>-->
+        <!--                  <a href="#" class="btn btn-primary">Shop Now</a>-->
+        <!--                  -->
+        <!--                </div>-->
+        <!--              </div>-->
+        <!--            </li>-->
+        <!--          </ul>-->
+        <!--        </div>-->
+        <!--      </section>-->
+        <!--      -->
+
+
+
+
+        <!--
+          - #COLLECTION
+        -->
+
+        <!--      <section class="section collection" id="collection" aria-label="collection" data-section>-->
+        <!--        <div class="container">-->
+
+        <!--          <ul class="collection-list">-->
+
+        <!--            <li>-->
+        <!--              <div class="collection-card has-before hover:shine">-->
+
+        <!--                <h2 class="h2 card-title">Summer Collection: Bare Water Cushion-->
+        <!--                </h2>-->
+
+        <!--                <p class="card-text">Starting at $19.99</p>-->
+
+        <!--                <a href="#" class="btn-link">-->
+        <!--                  <span class="span">Shop Now</span>-->
+
+        <!--                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>-->
+        <!--                </a>-->
+
+        <!--                <div class="has-bg-image" style="background-image: url('home_2(1).png')"></div>-->
+
+        <!--              </div>-->
+        <!--            </li>-->
+
+        <!--            <li>-->
+        <!--              <div class="collection-card has-before hover:shine">-->
+
+        <!--                <h2 class="h2 card-title">What’s New?</h2>-->
+
+        <!--                <p class="card-text">Better Than Palette Light and Glitter Garden</p>-->
+
+        <!--                <a href="#" class="btn-link">-->
+        <!--                  <span class="span">Discover Now</span>-->
+
+        <!--                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>-->
+        <!--                </a>-->
+
+        <!--                <div class="has-bg-image" style="background-image: url('home_3(1).png')"></div>-->
+
+        <!--              </div>-->
+        <!--            </li>-->
+
+        <!--            <li>-->
+        <!--              <div class="collection-card has-before hover:shine">-->
+
+        <!--                <h2 class="h2 card-title">Buy 1 Get 1 :-->
+        <!--                  Better Than Cheek - Renewal-->
+
+        <!--                </h2>-->
+
+        <!--                <p class="card-text">Starting at $20.99</p>-->
+
+        <!--                <a href="#" class="btn-link">-->
+        <!--                  <span class="span">Discover Now</span>-->
+
+        <!--                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>-->
+        <!--                </a>-->
+
+        <!--                <div class="has-bg-image" style="background-image: url('home_7(1).png')"></div>-->
+
+        <!--              </div>-->
+        <!--            </li>-->
+
+        <!--          </ul>-->
+
+        <!--        </div>-->
+        <!--      </section>-->
+
+
+
+
+
+        <!--
+          - #SHOP
+        -->
+        d
+        <section class="section shop" id="shop" aria-label="shop" data-section>
+            <div class="container">
+
+                <div class="title-wrapper">
+                    <h2 class="h2 section-title">Our Bestsellers</h2>
+
+                    <a href="#" class="btn-link">
+                        <span class="span">Shop All Products</span>
+
+                        <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                    </a>
+                </div>
+
+                <ul class="has-scrollbar">
+
+                    <li class="scrollbar-item">
+                        <div class="shop-card">
+
+                            <div class="card-banner img-holder" style="--width: 540; --height: 720;">
+                                <img src="{% static 'app/photos/home_1(1).png' %}" width="540" height="720" loading="lazy"
+                                     alt="Facial cleanser" class="img-cover">
+
+                                <span class="badge" aria-label="20% off">-20%</span>
+
+                                <div class="card-actions">
+
+                                    <button class="action-btn" aria-label="add to cart">
+                                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="add to whishlist">
+                                        <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="compare">
+                                        <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <div class="card-content">
+
+                                <div class="price">
+                                    <del class="del">$29.00</del>
+
+                                    <span class="span">$19.00</span>
+                                </div>
+
+                                <h3>
+                                    <a href="#" class="card-title">Twinkle Pen Liner</a>
+                                </h3>
+
+                                <div class="card-rating">
+
+                                    <div class="rating-wrapper" aria-label="5 start rating">
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                    </div>
+
+                                    <p class="rating-text">459 reviews</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="scrollbar-item">
+                        <div class="shop-card">
+
+                            <div class="card-banner img-holder" style="--width: 540; --height: 720;">
+                                <img src="{% static 'app/photos/lip_3(1).png' %}" width="540" height="720" loading="lazy"
+                                     alt="Bio-shroom Rejuvenating Serum" class="img-cover">
+
+                                <div class="card-actions">
+
+                                    <button class="action-btn" aria-label="add to cart">
+                                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="add to whishlist">
+                                        <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="compare">
+                                        <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <div class="card-content">
+
+                                <div class="price">
+                                    <span class="span">$17.00</span>
+                                </div>
+
+                                <h3>
+                                    <a href="#" class="card-title">Juicy Lasting Tint Original Series </a>
+                                </h3>
+
+                                <div class="card-rating">
+
+                                    <div class="rating-wrapper" aria-label="5 start rating">
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                    </div>
+
+                                    <p class="rating-text">407 reviews</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="scrollbar-item">
+                        <div class="shop-card">
+
+                            <div class="card-banner img-holder" style="--width: 540; --height: 720;">
+                                <img src="{% static 'app/photos/home_4(1).png' %}" width="540" height="720" loading="lazy"
+                                     alt="Coffee Bean Caffeine Eye Cream" class="img-cover">
+
+                                <div class="card-actions">
+
+                                    <button class="action-btn" aria-label="add to cart">
+                                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="add to whishlist">
+                                        <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="compare">
+                                        <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <div class="card-content">
+
+                                <div class="price">
+                                    <del class="del">$39.00</del>
+                                    <span class="span">$17.90 </span>
+                                </div>
+
+                                <h3>
+                                    <a href="#" class="card-title">Glasting Water Tint </a>
+                                </h3>
+
+                                <div class="card-rating">
+
+                                    <div class="rating-wrapper" aria-label="5 start rating">
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+
+                                    </div>
+
+                                    <p class="rating-text">517 reviews</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="scrollbar-item">
+                        <div class="shop-card">
+
+                            <div class="card-banner img-holder" style="--width: 540; --height: 720;">
+                                <img src="{% static 'app/photos/home_5(2).png' %}" width="540" height="720" loading="lazy"
+                                     alt="Facial cleanser" class="img-cover">
+
+                                <div class="card-actions">
+
+                                    <button class="action-btn" aria-label="add to cart">
+                                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="add to whishlist">
+                                        <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="compare">
+                                        <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <div class="card-content">
+
+                                <div class="price">
+                                    <span class="span">$16.90 </span>
+                                </div>
+
+                                <h3>
+                                    <a href="#" class="card-title">Better Than Shape</a>
+                                </h3>
+
+                                <div class="card-rating">
+
+                                    <div class="rating-wrapper" aria-label="5 start rating">
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                    </div>
+
+                                    <p class="rating-text">457 reviews</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="scrollbar-item">
+                        <div class="shop-card">
+
+                            <div class="card-banner img-holder" style="--width: 540; --height: 720;">
+                                <img src="{% static 'app/photos/home_9(1).png' %}" width="540" height="720" loading="lazy"
+                                     alt="Coffee Bean Caffeine Eye Cream" class="img-cover">
+
+                                <span class="badge" aria-label="20% off">-20%</span>
+
+                                <div class="card-actions">
+
+                                    <button class="action-btn" aria-label="add to cart">
+                                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="add to whishlist">
+                                        <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="compare">
+                                        <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <div class="card-content">
+
+                                <div class="price">
+                                    <del class="del">$12.00</del>
+
+                                    <span class="span">$6.00</span>
+                                </div>
+
+                                <h3>
+                                    <a href="#" class="card-title">Mood Pebble Nail Muteral Nude Series</a>
+                                </h3>
+
+                                <div class="card-rating">
+
+                                    <div class="rating-wrapper" aria-label="5 start rating">
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                    </div>
+
+                                    <p class="rating-text">199 reviews</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="scrollbar-item">
+                        <div class="shop-card">
+
+                            <div class="card-banner img-holder" style="--width: 540; --height: 720;">
+                                <img src="{% static 'app/photos/home_6(1).png' %}" width="540" height="720" loading="lazy"
+                                     alt="Facial cleanser" class="img-cover">
+
+                                <div class="card-actions">
+
+                                    <button class="action-btn" aria-label="add to cart">
+                                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="add to whishlist">
+                                        <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="compare">
+                                        <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <div class="card-content">
+
+                                <div class="price">
+                                    <span class="span">$25.00</span>
+                                </div>
+
+                                <h3>
+                                    <a href="#" class="card-title">Better Than Eyes Original Series
+                                    </a>
+                                </h3>
+
+                                <div class="card-rating">
+
+                                    <div class="rating-wrapper" aria-label="5 start rating">
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                    </div>
+
+                                    <p class="rating-text">753 reviews</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </section>
+
+
+
+
+        <!--      TEST-->
+
+
+        <!--      <div class="test-card-container">-->
+
+
+        <!--        <div class="test-card">-->
+        <!--          <img src="lip_glow1.png" alt="Card 1">-->
+
+        <!--        </div>-->
+
+        <!--        <div class="card-content">-->
+
+        <!--          <div class="price">-->
+        <!--            <del class="del">$39.00</del>-->
+
+        <!--            <span class="span">$24.00</span>-->
+        <!--          </div>-->
+
+        <!--          <h3>-->
+        <!--            <a href="#" class="card-title">Juicy Lasting Tint Autumn Series-->
+        <!--            </a>-->
+        <!--          </h3>-->
+
+        <!--          <div class="card-rating">-->
+
+        <!--            <div class="rating-wrapper" aria-label="5 start rating">-->
+        <!--              <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--              <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--              <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--              <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--              <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--            </div>-->
+
+        <!--            <p class="rating-text">530 reviews</p>-->
+
+        <!--          </div>-->
+
+        <!--        </div>-->
+        <!--        &lt;!&ndash; Repeat the above structure for the other cards &ndash;&gt;-->
+
+        <!--      </div>-->
+
+
+        <!--&lt;!&ndash;      <div class="shop-card">&ndash;&gt;-->
+
+        <!--        <div class="card-banner img-holder" style="width: 40; height: 20;">-->
+        <!--          <img src="home_8(1).png" width="540" height="720" loading="lazy"-->
+        <!--               alt="Facial cleanser" class="img-cover">-->
+
+        <!--          <span class="badge" aria-label="20% off">-20%</span>-->
+
+        <!--          <div class="card-actions">-->
+
+        <!--            <button class="action-btn" aria-label="add to cart">-->
+        <!--              <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>-->
+        <!--            </button>-->
+
+        <!--            <button class="action-btn" aria-label="add to whishlist">-->
+        <!--              <ion-icon name="star-outline" aria-hidden="true"></ion-icon>-->
+        <!--            </button>-->
+
+        <!--            <button class="action-btn" aria-label="compare">-->
+        <!--              <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>-->
+        <!--            </button>-->
+
+        <!--          </div>-->
+        <!--        </div>-->
+
+        <!--        <div class="card-content">-->
+
+        <!--          <div class="price">-->
+        <!--            <del class="del">$39.00</del>-->
+
+        <!--            <span class="span">$24.00</span>-->
+        <!--          </div>-->
+
+        <!--          <h3>-->
+        <!--            <a href="#" class="card-title">Juicy Lasting Tint Autumn Series-->
+        <!--            </a>-->
+        <!--          </h3>-->
+
+        <!--          <div class="card-rating">-->
+
+        <!--            <div class="rating-wrapper" aria-label="5 start rating">-->
+        <!--              <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--              <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--              <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--              <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--              <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--            </div>-->
+
+        <!--            <p class="rating-text">530 reviews</p>-->
+
+        <!--          </div>-->
+
+        <!--        </div>-->
+
+        <!--      </div>-->
+
+
+
+
+
+
+
+
+
+        <!--END TEST-->
+
+
+
+
+
+        <!--      -->
+        <!--      EDIT THIS SHIT-->
+
+        <!--      <section class="section shop" id="shop" aria-label="shop" data-section>-->
+        <!--        <div class="container">-->
+
+        <!--          <div class="title-wrapper">-->
+        <!--            <h2 class="h2 section-title">Under $25</h2>-->
+
+        <!--            <a href="#" class="btn-link">-->
+        <!--              <span class="span">Shop All Products</span>-->
+
+        <!--              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>-->
+        <!--            </a>-->
+        <!--          </div>-->
+
+        <!--          <ul class="has-scrollbar">-->
+
+        <!--            <li class="scrollbar-item">-->
+        <!--              <div class="shop-card">-->
+
+        <!--                <div class="card-banner img-holder" style="&#45;&#45;width: 540; &#45;&#45;height: 720;">-->
+        <!--                  <img src="home_8(1).png" width="540" height="720" loading="lazy"-->
+        <!--                       alt="Facial cleanser" class="img-cover">-->
+
+        <!--                  <span class="badge" aria-label="20% off">-20%</span>-->
+
+        <!--                  <div class="card-actions">-->
+
+        <!--                    <button class="action-btn" aria-label="add to cart">-->
+        <!--                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="add to whishlist">-->
+        <!--                      <ion-icon name="star-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="compare">-->
+        <!--                      <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                  </div>-->
+        <!--                </div>-->
+
+        <!--                <div class="card-content">-->
+
+        <!--                  <div class="price">-->
+        <!--                    <del class="del">$39.00</del>-->
+
+        <!--                    <span class="span">$24.00</span>-->
+        <!--                  </div>-->
+
+        <!--                  <h3>-->
+        <!--                    <a href="#" class="card-title">Juicy Lasting Tint Autumn Series-->
+        <!--                    </a>-->
+        <!--                  </h3>-->
+
+        <!--                  <div class="card-rating">-->
+
+        <!--                    <div class="rating-wrapper" aria-label="5 start rating">-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                    </div>-->
+
+        <!--                    <p class="rating-text">530 reviews</p>-->
+
+        <!--                  </div>-->
+
+        <!--                </div>-->
+
+        <!--              </div>-->
+        <!--&lt;!&ndash;            </li>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;            <li class="scrollbar-item">&ndash;&gt;-->
+        <!--              <div class="shop-card">-->
+
+        <!--                <div class="card-banner img-holder" style="&#45;&#45;width: 40; &#45;&#45;height: 20;">-->
+        <!--                  <img src="home_10(1).png" width="40" height="20" loading="lazy"-->
+        <!--                       alt="Bio-shroom Rejuvenating Serum" class="img-cover">-->
+
+        <!--                  <div class="card-actions">-->
+
+        <!--                    <button class="action-btn" aria-label="add to cart">-->
+        <!--                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="add to whishlist">-->
+        <!--                      <ion-icon name="star-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="compare">-->
+        <!--                      <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                  </div>-->
+        <!--                </div>-->
+
+        <!--                <div class="card-content">-->
+
+        <!--                  <div class="price">-->
+        <!--                    <span class="span">$19.00</span>-->
+        <!--                  </div>-->
+
+        <!--                  <h3>-->
+        <!--                    <a href="#" class="card-title">See-Through Veil Lighter-->
+        <!--                    </a>-->
+        <!--                  </h3>-->
+
+        <!--                  <div class="card-rating">-->
+
+        <!--                    <div class="rating-wrapper" aria-label="5 start rating">-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+
+        <!--                    </div>-->
+
+        <!--                    <p class="rating-text">625 reviews</p>-->
+
+        <!--                  </div>-->
+
+        <!--                </div>-->
+
+        <!--              </div>-->
+        <!--&lt;!&ndash;            </li>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;            <li class="scrollbar-item">&ndash;&gt;-->
+        <!--              <div class="shop-card">-->
+
+        <!--                <div class="card-banner img-holder" style="&#45;&#45;width: 40; &#45;&#45;height: 20;">-->
+        <!--                  <img src="lip_matt1.png" width="40" height="20" loading="lazy"-->
+        <!--                       alt="Coffee Bean Caffeine Eye Cream" class="img-cover">-->
+
+        <!--                  <div class="card-actions">-->
+
+        <!--                    <button class="action-btn" aria-label="add to cart">-->
+        <!--                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="add to whishlist">-->
+        <!--                      <ion-icon name="star-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="compare">-->
+        <!--                      <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                  </div>-->
+        <!--                </div>-->
+
+        <!--                <div class="card-content">-->
+
+        <!--                  <div class="price">-->
+        <!--                    <span class="span">$16.00</span>-->
+        <!--                  </div>-->
+
+        <!--                  <h3>-->
+        <!--                    <a href="#" class="card-title">Coffee Bean Caffeine Lip Balm</a>-->
+        <!--                  </h3>-->
+
+        <!--                  <div class="card-rating">-->
+
+        <!--                    <div class="rating-wrapper" aria-label="5 start rating">-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                    </div>-->
+
+        <!--                    <p class="rating-text">658 reviews</p>-->
+
+        <!--                  </div>-->
+
+        <!--                </div>-->
+
+        <!--              </div>-->
+        <!--&lt;!&ndash;            </li>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;            <li class="scrollbar-item">&ndash;&gt;-->
+        <!--              <div class="shop-card">-->
+
+        <!--                <div class="card-banner img-holder" style="&#45;&#45;width: 40; &#45;&#45;height: 20;">-->
+        <!--                  <img src="lip4(1).png" width="40" height="20" loading="lazy"-->
+        <!--                       alt="Facial cleanser" class="img-cover">-->
+
+        <!--                  <div class="card-actions">-->
+
+        <!--                    <button class="action-btn" aria-label="add to cart">-->
+        <!--                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="add to whishlist">-->
+        <!--                      <ion-icon name="star-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="compare">-->
+        <!--                      <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                  </div>-->
+        <!--                </div>-->
+
+        <!--                <div class="card-content">-->
+
+        <!--                  <div class="price">-->
+        <!--                    <span class="span">$9.00</span>-->
+        <!--                  </div>-->
+
+        <!--                  <h3>-->
+        <!--                    <a href="#" class="card-title">Lip Gloss Winter Collection</a>-->
+        <!--                  </h3>-->
+
+        <!--                  <div class="card-rating">-->
+
+        <!--                    <div class="rating-wrapper" aria-label="5 start rating">-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                    </div>-->
+
+        <!--                    <p class="rating-text">590 reviews</p>-->
+
+        <!--                  </div>-->
+
+        <!--                </div>-->
+
+        <!--              </div>-->
+        <!--&lt;!&ndash;            </li>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;            <li class="scrollbar-item">&ndash;&gt;-->
+        <!--              <div class="shop-card">-->
+
+        <!--                <div class="card-banner img-holder" style="&#45;&#45;width: 40; &#45;&#45;height: 20;">-->
+        <!--                  <img src="lip4(2).png" width="40" height="20" loading="lazy"-->
+        <!--                       alt="Coffee Bean Caffeine Eye Cream" class="img-cover">-->
+
+        <!--                  <span class="badge" aria-label="20% off">-50%</span>-->
+
+        <!--                  <div class="card-actions">-->
+
+        <!--                    <button class="action-btn" aria-label="add to cart">-->
+        <!--                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="add to whishlist">-->
+        <!--                      <ion-icon name="star-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="compare">-->
+        <!--                      <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                  </div>-->
+        <!--                </div>-->
+
+        <!--                <div class="card-content">-->
+
+        <!--                  <div class="price">-->
+        <!--                    <del class="del">$30.00</del>-->
+
+        <!--                    <span class="span">$15.00</span>-->
+        <!--                  </div>-->
+
+        <!--                  <h3>-->
+        <!--                    <a href="#" class="card-title">Blur Fudge Tint-->
+        <!--                    </a>-->
+        <!--                  </h3>-->
+
+        <!--                  <div class="card-rating">-->
+
+        <!--                    <div class="rating-wrapper" aria-label="5 start rating">-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                    </div>-->
+
+        <!--                    <p class="rating-text">480 reviews</p>-->
+
+        <!--                  </div>-->
+
+        <!--                </div>-->
+
+        <!--              </div>-->
+        <!--&lt;!&ndash;            </li>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;            <li class="scrollbar-item">&ndash;&gt;-->
+        <!--              <div class="shop-card">-->
+
+        <!--                <div class="card-banner img-holder" style="&#45;&#45;width: 10; &#45;&#45;height: 10;">-->
+        <!--                  <img src="eye.png" width="10" height="10" loading="lazy"-->
+        <!--                       alt="Facial cleanser" class="img-cover">-->
+
+        <!--                  <div class="card-actions">-->
+
+        <!--                    <button class="action-btn" aria-label="add to cart">-->
+        <!--                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="add to whishlist">-->
+        <!--                      <ion-icon name="star-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="compare">-->
+        <!--                      <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                  </div>-->
+        <!--                </div>-->
+
+        <!--                <div class="card-content">-->
+
+        <!--                  <div class="price">-->
+        <!--                    <span class="span">$24.99</span>-->
+        <!--                  </div>-->
+
+        <!--                  <h3>-->
+        <!--                    <a href="#" class="card-title">Eye Pallete With KITTIES!</a>-->
+        <!--                  </h3>-->
+
+        <!--                  <div class="card-rating">-->
+
+        <!--                    <div class="rating-wrapper" aria-label="5 start rating">-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                    </div>-->
+
+        <!--                    <p class="rating-text">570 reviews</p>-->
+
+        <!--                  </div>-->
+
+        <!--                </div>-->
+
+        <!--              </div>-->
+        <!--&lt;!&ndash;            </li>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;          </ul>&ndash;&gt;-->
+
+        <!--        </div>-->
+        <!--      </section>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--      UNDER 25 $
+
+        -->
+
+
+
+
+
+        <div class="test-card-container">
+            <div class="test-card">
+
+                <div class="card-banner0 img-holder" style="--width: 540; --height: 720;">
+                    <img src="https://romand.us/cdn/shop/products/dewyful.jpg?v=1663027743  " width="540" height="720" loading="lazy"
+                         alt="Card 1" class="img-cover">
+                    <div class="card-actions">
+
+                        <button class="action-btn" aria-label="add to cart">
+                            <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="add to whishlist">
+                            <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="compare">
+                            <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                    </div>
+
+
+
+                </div>
+
+                <div class="card-content">
+
+                    <div class="price">
+                        <del class="del">$39.00</del>
+
+                        <span class="span">$24.00</span>
+                    </div>
+
+                    <h3>
+                        <a href="#" class="card-title">Dewyful Water Tint Milk Grocery Series
+                        </a>
+                    </h3>
+
+                    <div class="card-rating">
+
+                        <div class="rating-wrapper" aria-label="5 start rating">
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                        </div>
+
+                        <p class="rating-text">62 reviews</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="test-card">
+
+                <div class="card-banner1 img-holder" data-hover-image="/htmlcss/test1.webp" style="--width: 540; --height: 720;">
+                    <img src="https://romand.us/cdn/shop/products/dewyfull_water_tint.jpg?v=1641423292  " width="540" height="720" loading="lazy"
+                         alt="Card 2" class="img-cover">
+
+                    <div class="card-actions">
+
+                        <button class="action-btn" aria-label="add to cart">
+                            <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="add to whishlist">
+                            <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="compare">
+                            <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="price">
+                        <del class="del">$68.00</del>
+                        <span class="span">$44.00</span>
+                    </div>
+
+                    <h3>
+                        <a href="#" class="card-title">
+                            Dewyful Water Tint
+                        </a>
+                    </h3>
+
+                    <div class="card-rating">
+
+                        <div class="rating-wrapper" aria-label="5 start rating">
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                        </div>
+
+                        <p class="rating-text">53 reviews</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="test-card">
+
+                <div class="card-banner2 img-holder" style="--width: 540; --height: 720;">
+                    <img src="https://www.romandglobal.com/cdn/shop/products/purgi_740x.jpg?v=1641977219" width="540" height="720" loading="lazy"
+                         alt="Card 3" class="img-cover">
+
+                    <div class="card-actions">
+
+                        <button class="action-btn" aria-label="add to cart">
+                            <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="add to whishlist">
+                            <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="compare">
+                            <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="price">
+                        <del> $500.00</del>
+                        <span class="span">$424.00</span>
+                    </div>
+
+                    <h3>
+                        <a href="#" class="card-title">Blur Fudge Tint
+                        </a>
+                    </h3>
+
+                    <div class="card-rating">
+
+                        <div class="rating-wrapper" aria-label="5 start rating">
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                        </div>
+
+                        <p class="rating-text">159 reviews</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="test-card">
+
+                <div class="card-banner3 img-holder" style="--width: 540; --height: 720;">
+                    <img src="https://romand.us/cdn/shop/products/glasting-meling-balm-1000x1500.jpg?v=1670976671 " width="540" height="720" loading="lazy"
+                         alt="Card 4" class="img-cover">
+
+                    <div class="card-actions">
+
+                        <button class="action-btn" aria-label="add to cart">
+                            <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="add to whishlist">
+                            <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="compare">
+                            <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="price">
+                        <del> $90.00</del>
+                        <span class="span">$84.00</span>
+                    </div>
+
+                    <h3>
+                        <a href="#" class="card-title">Glasting Melting Balm
+                        </a>
+                    </h3>
+
+                    <div class="card-rating">
+
+                        <div class="rating-wrapper" aria-label="5 start rating">
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                        </div>
+
+                        <p class="rating-text">13 reviews</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="test-card">
+
+                <div class="card-banner4 img-holder" style="--width: 540; --height: 720;">
+                    <img src="https://clubclio.shop/cdn/shop/products/lipstick_f6ca1e62-0820-48ee-a16d-484204f4df81_800x.jpg?v=1667886388 " width="540" height="720" loading="lazy"
+                         alt="Card 4" class="img-cover">
+
+                    <div class="card-actions">
+
+                        <button class="action-btn" aria-label="add to cart">
+                            <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="add to whishlist">
+                            <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="compare">
+                            <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="price">
+                        <del> $100.00</del>
+                        <span class="span">$80.00</span>
+                    </div>
+
+                    <h3>
+                        <a href="#" class="card-title">Ink Mood Glowy Balm
+                        </a>
+                    </h3>
+
+                    <div class="card-rating">
+
+                        <div class="rating-wrapper" aria-label="5 start rating">
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                        </div>
+
+                        <p class="rating-text">56 reviews</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="test-card">
+
+                <div class="card-banner5 img-holder" style="--width: 540; --height: 720;">
+                    <img src="https://clubclio.shop/cdn/shop/files/2_3bd8fa62-6b99-4eca-a2e6-d7f15195edb5_800x.jpg?v=1698396755 " width="540" height="720" loading="lazy"
+                         alt="card 5" class="img-cover">
+
+                    <div class="card-actions">
+
+                        <button class="action-btn" aria-label="add to cart">
+                            <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="add to whishlist">
+                            <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="compare">
+                            <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="price">
+                        <del>$450.00</del>
+                        <span class="span">$400.00</span>
+                    </div>
+
+                    <h3>
+                        <a href="#" class="card-title">Water Bare Tint
+                        </a>
+                    </h3>
+
+                    <div class="card-rating">
+
+                        <div class="rating-wrapper" aria-label="5 start rating">
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                        </div>
+
+                        <p class="rating-text">152 reviews</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="test-card">
+
+                <div class="card-banner6 img-holder" style="--width: 540; --height: 720;">
+                    <img src="https://romand.us/cdn/shop/products/2__us.jpg?v=1639105338" width="540" height="720" loading="lazy"
+                         alt="card 6" class="img-cover">
+
+                    <div class="card-actions">
+
+                        <button class="action-btn" aria-label="add to cart">
+                            <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="add to whishlist">
+                            <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="compare">
+                            <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="price">
+
+                        <span class="span">$133.00</span>
+                    </div>
+
+                    <h3>
+                        <a href="#" class="card-title">Juicy Lasting Tint Ripe Fruits Series
+                        </a>
+                    </h3>
+
+                    <div class="card-rating">
+
+                        <div class="rating-wrapper" aria-label="5 start rating">
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                        </div>
+
+                        <p class="rating-text">65 reviews</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="test-card">
+
+                <div class="card-banner7 img-holder" style="--width: 540; --height: 720;">
+                    <img src="https://romand.us/cdn/shop/files/1_ff92497a-a9ca-4e4c-8b96-a098aada8bea.jpg?v=1691111263 " width="540" height="720" loading="lazy"
+                         alt="card 7" class="img-cover">
+
+                    <div class="card-actions">
+
+                        <button class="action-btn" aria-label="add to cart">
+                            <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="add to whishlist">
+                            <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="compare">
+                            <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="price">
+                        <del>$140.00</del>
+                        <span class="span">$122.00</span>
+                    </div>
+
+                    <h3>
+                        <a href="#" class="card-title">Lip Mate Pencil
+                        </a>
+                    </h3>
+
+                    <div class="card-rating">
+
+                        <div class="rating-wrapper" aria-label="5 start rating">
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                        </div>
+
+                        <p class="rating-text">623 reviews</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="test-card">
+
+                <div class="card-banner8 img-holder" style="--width: 540; --height: 720;">
+                    <img src="https://romand.us/cdn/shop/products/juicy_lasting_tint_summer_pink.jpg?v=1639525936  " width="540" height="720" loading="lazy"
+                         alt="card 8" class="img-cover">
+
+                    <div class="card-actions">
+
+                        <button class="action-btn" aria-label="add to cart">
+                            <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="add to whishlist">
+                            <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="compare">
+                            <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="price">
+
+                        <span class="span">$10.00</span>
+                    </div>
+
+                    <h3>
+                        <a href="#" class="card-title">Juicy Lasting Tint Summer Pink Series
+                        </a>
+                    </h3>
+
+                    <div class="card-rating">
+
+                        <div class="rating-wrapper" aria-label="5 start rating">
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                        </div>
+
+                        <p class="rating-text">130 reviews</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="test-card">
+
+                <div class="card-banner9 img-holder" style="--width: 540; --height: 720;">
+                    <img src="https://romand.us/cdn/shop/products/a9f3e36aa731d5a532df4044bdf443f1.jpg?v=1664902835" width="540" height="720" loading="lazy"
+                         alt="card 9" class="img-cover">
+
+                    <div class="card-actions">
+
+                        <button class="action-btn" aria-label="add to cart">
+                            <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="add to whishlist">
+                            <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="compare">
+                            <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="price">
+
+                        <span class="span">$94.00</span>
+                    </div>
+
+                    <h3>
+                        <a href="#" class="card-title">Dewyful Water Tint Muteral Nude Series
+                        </a>
+                    </h3>
+
+                    <div class="card-rating">
+
+                        <div class="rating-wrapper" aria-label="5 start rating">
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                        </div>
+
+                        <p class="rating-text">110 reviews</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="test-card">
+
+                <div class="card-banner10 img-holder" style="--width: 540; --height: 720;">
+                    <img src="https://amuseseoulmakeup.com/cdn/shop/files/01-3_2048x2048.jpg?v=1697446664 " width="540" height="720" loading="lazy"
+                         alt="card 10" class="img-cover">
+
+                    <div class="card-actions">
+
+                        <button class="action-btn" aria-label="add to cart">
+                            <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="add to whishlist">
+                            <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="compare">
+                            <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="price">
+                        <del>$540.00</del>
+                        <span class="span">$521.00</span>
+                    </div>
+
+                    <h3>
+                        <a href="#" class="card-title">dew dint super lip
+                        </a>
+                    </h3>
+
+                    <div class="card-rating">
+
+                        <div class="rating-wrapper" aria-label="5 start rating">
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+
+                        </div>
+
+                        <p class="rating-text">19 reviews</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="test-card">
+
+                <div class="card-banner11 img-holder" style="--width: 540; --height: 720;">
+                    <img src="https://amuseseoulmakeup.com/cdn/shop/files/1_f3462314-5f17-42e4-94a5-5251ffd825aa_2048x2048.png?v=1695622984" width="540" height="720" loading="lazy"
+                         alt="Bio-shroom Rejuvenating Serum" class="img-cover">
+
+                    <div class="card-actions">
+
+                        <button class="action-btn" aria-label="add to cart">
+                            <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="add to whishlist">
+                            <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="compare">
+                            <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="price">
+                        <del>$70.00</del>
+                        <span class="span">$55.00</span>
+                    </div>
+
+                    <h3>
+                        <a href="#" class="card-title">Lip smudger ultra
+                        </a>
+                    </h3>
+
+                    <div class="card-rating">
+
+                        <div class="rating-wrapper" aria-label="5 start rating">
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                        </div>
+
+                        <p class="rating-text">54 reviews</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="test-card">
+
+                <div class="card-banner12 img-holder" style="--width: 540; --height: 720;">
+                    <img src="https://clubclio.shop/cdn/shop/products/lipstain_5_800x.jpg?v=1693376520 " width="540" height="720" loading="lazy"
+                         alt="card 12" class="img-cover">
+
+                    <div class="card-actions">
+
+                        <button class="action-btn" aria-label="add to cart">
+                            <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="add to whishlist">
+                            <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="compare">
+                            <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+                <div class="card-content">
+
+                    <div class="price">
+                        <del>$100.00</del>
+
+                        <span class="span">$64.00</span>
+                    </div>
+
+                    <h3>
+                        <a href="#" class="card-title">Chiffon Blur Tint
+                        </a>
+                    </h3>
+
+                    <div class="card-rating">
+
+                        <div class="rating-wrapper" aria-label="5 start rating">
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+
+                        </div>
+
+                        <p class="rating-text">86 reviews</p>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="test-card">
+
+                <div class="card-banner13 img-holder" style="--width: 540; --height: 720;">
+                    <img src="https://clubclio.shop/cdn/shop/files/2_24032b72-87f4-4219-b390-0c24b060a951_800x.jpg?v=1690357516 " width="540" height="720" loading="lazy"
+                         alt="card 13" class="img-cover">
+
+
+
+                    <div class="card-actions">
+
+                        <button class="action-btn" aria-label="add to cart">
+                            <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="add to whishlist">
+                            <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="compare">
+                            <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+                <div class="card-content">
+
+                    <div class="price">
+
+                        <del>$300.00</del>
+                        <span class="span">$243.00</span>
+                    </div>
+
+                    <h3>
+                        <a href="#" class="card-title"> Crystal Glam Tint
+                        </a>
+                    </h3>
+
+                    <div class="card-rating">
+
+                        <div class="rating-wrapper" aria-label="5 start rating">
+
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                        </div>
+
+                        <p class="rating-text">67 reviews</p>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="test-card">
+
+                <div class="card-banner14 img-holder" style="--width: 540; --height: 720;">
+                    <img src="https://clubclio.shop/cdn/shop/files/ss1_800x.jpg?v=1694254149" width="540" height="720" loading="lazy"
+                         alt="Bio-shroom Rejuvenating Serum" class="img-cover">
+
+                    <div class="card-actions">
+
+                        <button class="action-btn" aria-label="add to cart">
+                            <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="add to whishlist">
+                            <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                        <button class="action-btn" aria-label="compare">
+                            <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+                <div class="card-content">
+
+                    <div class="price">
+
+                        <del>$100.00</del>
+                        <span class="span">$82.00</span>
+                    </div>
+
+                    <h3>
+                        <a href="#" class="card-title">Chiffon Mood Lip
+                        </a>
+                    </h3>
+
+                    <div class="card-rating">
+
+                        <div class="rating-wrapper" aria-label="5 start rating">
+
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                            <ion-icon name="star" aria-hidden="true"></ion-icon>
+                        </div>
+
+                        <p class="rating-text">49 reviews</p>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- Repeat the above structure for the other cards -->
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="section shop" id="shop" aria-label="shop" data-section>
+            <div class="container">
+
+                <div class="title-wrapper">
+                    <h2 class="h2 section-title">Under $25</h2>
+
+                    <a href="#" class="btn-link">
+                        <span class="span">Shop All Products</span>
+
+                        <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                    </a>
+                </div>
+
+                <ul class="has-scrollbar">
+
+                    <li class="scrollbar-item">
+                        <div class="shop-card">
+
+                            <div class="card-banner img-holder" style="--width: 540; --height: 720;">
+                                <img src="{% static 'app/photos/home_8(1).png' %}" width="540" height="720" loading="lazy"
+                                     alt="Facial cleanser" class="img-cover">
+
+                                <span class="badge" aria-label="20% off">-20%</span>
+
+                                <div class="card-actions">
+
+                                    <button class="action-btn" aria-label="add to cart">
+                                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="add to whishlist">
+                                        <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="compare">
+                                        <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <div class="card-content">
+
+                                <div class="price">
+                                    <del class="del">$39.00</del>
+
+                                    <span class="span">$24.00</span>
+                                </div>
+
+                                <h3>
+                                    <a href="#" class="card-title">Juicy Lasting Tint Autumn Series
+                                    </a>
+                                </h3>
+
+                                <div class="card-rating">
+
+                                    <div class="rating-wrapper" aria-label="5 start rating">
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                    </div>
+
+                                    <p class="rating-text">530 reviews</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="scrollbar-item">
+                        <div class="shop-card">
+
+                            <div class="card-banner img-holder" style="--width: 540; --height: 720;">
+                                <img src="{% static 'app/photos/home_10(1).png' %}" width="540" height="720" loading="lazy"
+                                     alt="Bio-shroom Rejuvenating Serum" class="img-cover">
+
+                                <div class="card-actions">
+
+                                    <button class="action-btn" aria-label="add to cart">
+                                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="add to whishlist">
+                                        <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="compare">
+                                        <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <div class="card-content">
+
+                                <div class="price">
+                                    <span class="span">$19.00</span>
+                                </div>
+
+                                <h3>
+                                    <a href="#" class="card-title">See-Through Veil Lighter
+                                    </a>
+                                </h3>
+
+                                <div class="card-rating">
+
+                                    <div class="rating-wrapper" aria-label="5 start rating">
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        \
+                                    </div>
+
+                                    <p class="rating-text">625 reviews</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="scrollbar-item">
+                        <div class="shop-card">
+
+                            <div class="card-banner img-holder" style="--width: 540; --height: 720;">
+                                <img src="{% static 'app/photos/lip_matt1.png' %}" width="540" height="720" loading="lazy"
+                                     alt="Coffee Bean Caffeine Eye Cream" class="img-cover">
+
+                                <div class="card-actions">
+
+                                    <button class="action-btn" aria-label="add to cart">
+                                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="add to whishlist">
+                                        <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="compare">
+                                        <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <div class="card-content">
+
+                                <div class="price">
+                                    <span class="span">$16.00</span>
+                                </div>
+
+                                <h3>
+                                    <a href="#" class="card-title">Coffee Bean Caffeine Lip Balm</a>
+                                </h3>
+
+                                <div class="card-rating">
+
+                                    <div class="rating-wrapper" aria-label="5 start rating">
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                    </div>
+
+                                    <p class="rating-text">658 reviews</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="scrollbar-item">
+                        <div class="shop-card">
+
+                            <div class="card-banner img-holder" style="--width: 540; --height: 720;">
+                                <img src="{% static 'app/photos/lip4(1).png' %}" width="540" height="720" loading="lazy"
+                                     alt="Facial cleanser" class="img-cover">
+
+                                <div class="card-actions">
+
+                                    <button class="action-btn" aria-label="add to cart">
+                                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="add to whishlist">
+                                        <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="compare">
+                                        <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <div class="card-content">
+
+                                <div class="price">
+                                    <span class="span">$9.00</span>
+                                </div>
+
+                                <h3>
+                                    <a href="#" class="card-title">Lip Gloss Winter Collection</a>
+                                </h3>
+
+                                <div class="card-rating">
+
+                                    <div class="rating-wrapper" aria-label="5 start rating">
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                    </div>
+
+                                    <p class="rating-text">590 reviews</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="scrollbar-item">
+                        <div class="shop-card">
+
+                            <div class="card-banner img-holder" style="--width: 540; --height: 720;">
+                                <img src="{% static 'app/photos/lip4(2).png' %}" width="40" height="20" loading="lazy"
+                                     alt="Coffee Bean Caffeine Eye Cream" class="img-cover">
+
+                                <span class="badge" aria-label="20% off">-50%</span>
+
+                                <div class="card-actions">
+
+                                    <button class="action-btn" aria-label="add to cart">
+                                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="add to whishlist">
+                                        <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="compare">
+                                        <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <div class="card-content">
+
+                                <div class="price">
+                                    <del class="del">$30.00</del>
+
+                                    <span class="span">$15.00</span>
+                                </div>
+
+                                <h3>
+                                    <a href="#" class="card-title">Blur Fudge Tint
+                                    </a>
+                                </h3>
+
+                                <div class="card-rating">
+
+                                    <div class="rating-wrapper" aria-label="5 start rating">
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                    </div>
+
+                                    <p class="rating-text">480 reviews</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="scrollbar-item">
+                        <div class="shop-card">
+
+                            <div class="card-banner img-holder" style="--width: 40; --height: 20;">
+                                <img src="{% static 'app/photos/eye.png' %}" width="540" height="720" loading="lazy"
+                                     alt="Facial cleanser" class="img-cover">
+
+                                <div class="card-actions">
+
+                                    <button class="action-btn" aria-label="add to cart">
+                                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="add to whishlist">
+                                        <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                    <button class="action-btn" aria-label="compare">
+                                        <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <div class="card-content">
+
+                                <div class="price">
+                                    <span class="span">$24.99</span>
+                                </div>
+
+                                <h3>
+                                    <a href="#" class="card-title">Eye Pallete With KITTIES!</a>
+                                </h3>
+
+                                <div class="card-rating">
+
+                                    <div class="rating-wrapper" aria-label="5 start rating">
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star" aria-hidden="true"></ion-icon>
+                                    </div>
+
+                                    <p class="rating-text">570 reviews</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </section>
+
+
+
+
+
+        <!--
+          - #BANNER
+        -->
+
+        <!--      <section class="section banner" aria-label="banner" data-section>-->
+        <!--        <style>.circular-video {-->
+        <!--          width: 1000px;-->
+        <!--          height: 550px;-->
+        <!--          border-radius: 10%;-->
+        <!--          overflow: hidden;-->
+        <!--        }-->
+        <!--        -->
+        <!--        #background-video {-->
+        <!--          width: 100%;-->
+        <!--          height: 100%;-->
+        <!--          object-fit: cover;-->
+        <!--        }-->
+        <!--        </style>-->
+        <!--        <div class="container">-->
+        <!--          <ul class="banner-list">-->
+        <!--            <li>-->
+        <!--              <div class="banner-card banner-card-1 has-before hover:shine">-->
+        <!--                <p class="card-subtitle">New Collection</p>-->
+        <!--                <div class="video-container">-->
+        <!--                  <div class="circular-video">-->
+        <!--                    <video autoplay muted loop id="background-video">-->
+        <!--                      <source src="9.webm" type="video/mp4">-->
+        <!--                    </video>-->
+        <!--                  </div>-->
+        <!--                </div>-->
+        <!--              </div>-->
+        <!--            </li>-->
+        <!--            <li>-->
+        <!--              <div class="banner-card banner-card-2 has-before hover:shine">-->
+        <!--                <h2 class="h2 card-title">SEE THE BEAUTY OF PINK</h2>-->
+        <!--                <p class="card-text">-->
+        <!--                  Makeup with an extended range of colors for everyone.Do whatever you want!-->
+        <!--                </p>-->
+        <!--                <a href="#" class="btn btn-secondary">Shop here</a>-->
+        <!--              </div>-->
+        <!--            </li>-->
+        <!--          </ul>-->
+        <!--        </div>-->
+        <!--      </section>-->
+        <!--      -->
+
+
+        <!--
+          - #SHOP
+        -->
+
+
+
+        <!--      <section class="section shop" id="shop" aria-label="shop" data-section>-->
+        <!--        <div class="container">-->
+
+        <!--          <div class="title-wrapper">-->
+        <!--            <h2 class="h2 section-title">For eyes</h2>-->
+
+        <!--            <a href="#" class="btn-link">-->
+        <!--              <span class="span">Shop All Products</span>-->
+
+        <!--              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>-->
+        <!--            </a>-->
+        <!--          </div>-->
+
+        <!--          <ul class="has-scrollbar">-->
+
+        <!--            <li class="scrollbar-item">-->
+        <!--              <div class="shop-card">-->
+
+        <!--                <div class="card-banner img-holder" style="&#45;&#45;width: 540; &#45;&#45;height: 720;">-->
+        <!--                  <img src="eye1.png" width="540" height="720" loading="lazy"-->
+        <!--                    alt="Facial cleanser" class="img-cover">-->
+
+        <!--                  <span class="badge" aria-label="20% off">-20%</span>-->
+
+        <!--                  <div class="card-actions">-->
+
+        <!--                    <button class="action-btn" aria-label="add to cart">-->
+        <!--                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="add to whishlist">-->
+        <!--                      <ion-icon name="star-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="compare">-->
+        <!--                      <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                  </div>-->
+        <!--                </div>-->
+
+        <!--                <div class="card-content">-->
+
+        <!--                  <div class="price">-->
+        <!--                    <del class="del">$39.00</del>-->
+
+        <!--                    <span class="span">$29.00</span>-->
+        <!--                  </div>-->
+
+        <!--                  <h3>-->
+        <!--                    <a href="#" class="card-title">Eye PAWlette</a>-->
+        <!--                  </h3>-->
+
+        <!--                  <div class="card-rating">-->
+
+        <!--                    <div class="rating-wrapper" aria-label="5 start rating">-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                    </div>-->
+
+        <!--                    <p class="rating-text">259 reviews</p>-->
+
+        <!--                  </div>-->
+
+        <!--                </div>-->
+
+        <!--              </div>-->
+        <!--            </li>-->
+
+        <!--            <li class="scrollbar-item">-->
+        <!--              <div class="shop-card">-->
+
+        <!--                <div class="card-banner img-holder" style="&#45;&#45;width: 540; &#45;&#45;height: 720;">-->
+        <!--                  <img src="eye2.png" width="540" height="720" loading="lazy"-->
+        <!--                    alt="Bio-shroom Rejuvenating Serum" class="img-cover">-->
+
+        <!--                  <div class="card-actions">-->
+
+        <!--                    <button class="action-btn" aria-label="add to cart">-->
+        <!--                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="add to whishlist">-->
+        <!--                      <ion-icon name="star-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="compare">-->
+        <!--                      <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                  </div>-->
+        <!--                </div>-->
+
+        <!--                <div class="card-content">-->
+
+        <!--                  <div class="price">-->
+        <!--                    <span class="span">$65.00</span>-->
+        <!--                  </div>-->
+
+        <!--                  <h3>-->
+        <!--                    <a href="#" class="card-title">Eye Combo (Pallete,Maskara)</a>-->
+        <!--                  </h3>-->
+
+        <!--                  <div class="card-rating">-->
+
+        <!--                    <div class="rating-wrapper" aria-label="5 start rating">-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                    </div>-->
+
+        <!--                    <p class="rating-text">796 reviews</p>-->
+
+        <!--                  </div>-->
+
+        <!--                </div>-->
+
+        <!--              </div>-->
+        <!--            </li>-->
+
+        <!--            <li class="scrollbar-item">-->
+        <!--              <div class="shop-card">-->
+
+        <!--                <div class="card-banner img-holder" style="&#45;&#45;width: 540; &#45;&#45;height: 720;">-->
+        <!--                  <img src="eye3.png" width="540" height="720" loading="lazy"-->
+        <!--                    alt="Coffee Bean Caffeine Eye Cream" class="img-cover">-->
+
+        <!--                  <div class="card-actions">-->
+
+        <!--                    <button class="action-btn" aria-label="add to cart">-->
+        <!--                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="add to whishlist">-->
+        <!--                      <ion-icon name="star-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="compare">-->
+        <!--                      <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                  </div>-->
+        <!--                </div>-->
+
+        <!--                <div class="card-content">-->
+
+        <!--                  <div class="price">-->
+        <!--                    <span class="span">$8+$8</span>-->
+        <!--                  </div>-->
+
+        <!--                  <h3>-->
+        <!--                    <a href="#" class="card-title">Brush Liner </a>-->
+        <!--                  </h3>-->
+
+        <!--                  <div class="card-rating">-->
+
+        <!--                    <div class="rating-wrapper" aria-label="5 start rating">-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      -->
+        <!--                    </div>-->
+
+        <!--                    <p class="rating-text">987 reviews</p>-->
+
+        <!--                  </div>-->
+
+        <!--                </div>-->
+
+        <!--              </div>-->
+        <!--            </li>-->
+
+        <!--            <li class="scrollbar-item">-->
+        <!--              <div class="shop-card">-->
+
+        <!--                <div class="card-banner img-holder" style="&#45;&#45;width: 540; &#45;&#45;height: 720;">-->
+        <!--                  <img src="eye4.png" width="540" height="720" loading="lazy"-->
+        <!--                    alt="Facial cleanser" class="img-cover">-->
+
+        <!--                  <div class="card-actions">-->
+
+        <!--                    <button class="action-btn" aria-label="add to cart">-->
+        <!--                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="add to whishlist">-->
+        <!--                      <ion-icon name="star-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="compare">-->
+        <!--                      <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                  </div>-->
+        <!--                </div>-->
+
+        <!--                <div class="card-content">-->
+
+        <!--                  <div class="price">-->
+        <!--                    <span class="span">$29.00</span>-->
+        <!--                  </div>-->
+
+        <!--                  <h3>-->
+        <!--                    <a href="#" class="card-title">Consealer Pallete</a>-->
+        <!--                  </h3>-->
+
+        <!--                  <div class="card-rating">-->
+
+        <!--                    <div class="rating-wrapper" aria-label="5 start rating">-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                    </div>-->
+
+        <!--                    <p class="rating-text">329 reviews</p>-->
+
+        <!--                  </div>-->
+
+        <!--                </div>-->
+
+        <!--              </div>-->
+        <!--            </li>-->
+
+        <!--            <li class="scrollbar-item">-->
+        <!--              <div class="shop-card">-->
+
+        <!--                <div class="card-banner img-holder" style="&#45;&#45;width: 540; &#45;&#45;height: 720;">-->
+        <!--                  <img src="eye5.png" width="540" height="720" loading="lazy"-->
+        <!--                    alt="Coffee Bean Caffeine Eye Cream" class="img-cover">-->
+
+        <!--                  <span class="badge" aria-label="20% off">-20%</span>-->
+
+        <!--                  <div class="card-actions">-->
+
+        <!--                    <button class="action-btn" aria-label="add to cart">-->
+        <!--                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="add to whishlist">-->
+        <!--                      <ion-icon name="star-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="compare">-->
+        <!--                      <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                  </div>-->
+        <!--                </div>-->
+
+        <!--                <div class="card-content">-->
+
+        <!--                  <div class="price">-->
+        <!--                    <del class="del">$59.00</del>-->
+
+        <!--                    <span class="span">$49.00</span>-->
+        <!--                  </div>-->
+
+        <!--                  <h3>-->
+        <!--                    <a href="#" class="card-title">"Keep Gray" Palette (SE) </a>-->
+        <!--                  </h3>-->
+
+        <!--                  <div class="card-rating">-->
+
+        <!--                    <div class="rating-wrapper" aria-label="5 start rating">-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                    </div>-->
+
+        <!--                    <p class="rating-text">999 reviews</p>-->
+
+        <!--                  </div>-->
+
+        <!--                </div>-->
+
+        <!--              </div>-->
+        <!--            </li>-->
+
+        <!--            <li class="scrollbar-item">-->
+        <!--              <div class="shop-card">-->
+
+        <!--                <div class="card-banner img-holder" style="&#45;&#45;width: 540; &#45;&#45;height: 720;">-->
+        <!--                  <img src="eye6.png" width="540" height="720" loading="lazy"-->
+        <!--                    alt="Facial cleanser" class="img-cover">-->
+
+        <!--                  <div class="card-actions">-->
+
+        <!--                    <button class="action-btn" aria-label="add to cart">-->
+        <!--                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="add to whishlist">-->
+        <!--                      <ion-icon name="star-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                    <button class="action-btn" aria-label="compare">-->
+        <!--                      <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>-->
+        <!--                    </button>-->
+
+        <!--                  </div>-->
+        <!--                </div>-->
+
+        <!--                <div class="card-content">-->
+
+        <!--                  <div class="price">-->
+        <!--                    <span class="span">$40.00</span>-->
+        <!--                  </div>-->
+
+        <!--                  <h3>-->
+        <!--                    <a href="#" class="card-title">Cutie Pie Palette</a>-->
+        <!--                  </h3>-->
+
+        <!--                  <div class="card-rating">-->
+
+        <!--                    <div class="rating-wrapper" aria-label="5 start rating">-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                      <ion-icon name="star" aria-hidden="true"></ion-icon>-->
+        <!--                    </div>-->
+
+        <!--                    <p class="rating-text">845 reviews</p>-->
+
+        <!--                  </div>-->
+
+        <!--                </div>-->
+
+        <!--              </div>-->
+        <!--            </li>-->
+
+        <!--          </ul>-->
+
+        <!--        </div>-->
+        <!--      </section>-->
+
+
+
+
+
+
+
+        <!--
+          - #OFFER
+        -->
+
+        <!--      <section class="section offer" id="offer" aria-label="offer" data-section>-->
+        <!--        <div class="container">-->
+
+        <!--          <figure class="offer-banner">-->
+        <!--            <img src="offer1.png" width="450" height="625" loading="lazy" alt="offer products"-->
+        <!--              class="w-100">-->
+
+        <!--            <img src="offer2.png" width="450" height="625" loading="lazy" alt="offer products"-->
+        <!--              class="w-100">-->
+        <!--          </figure>-->
+
+        <!--          <div class="offer-content">-->
+
+        <!--            <p class="offer-subtitle">-->
+        <!--              <span class="span">Special Offer</span>-->
+
+        <!--              <span class="badge" aria-label="20% off">-20%</span>-->
+        <!--            </p>-->
+
+        <!--            <h2 class="h2-large section-title">Eye + Lip Combo</h2>-->
+
+        <!--            <p class="section-text">-->
+        <!--              Get 2 products with price of 1.-->
+        <!--            </p>-->
+
+        <!--            <div class="countdown">-->
+
+        <!--              <span class="time" aria-label="days">05</span>-->
+        <!--              <span class="time" aria-label="hours">24</span>-->
+        <!--              <span class="time" aria-label="minutes">45</span>-->
+        <!--              <span class="time" aria-label="seconds">05</span>-->
+
+        <!--            </div>-->
+
+        <!--            <a href="#" class="btn btn-primary">Get Only $39.00</a>-->
+
+        <!--          </div>-->
+
+        <!--        </div>-->
+        <!--      </section>-->
+
+
+
+
+        <!--
+          - #FEATURE
+        -->
+
+        <section class="section feature" aria-label="feature" data-section>
+            <div class="container">
+
+                <h2 class="h2-large section-title">Why Shop with us?</h2>
+
+                <ul class="flex-list">
+
+                    <li class="flex-item">
+                        <div class="feature-card">
+
+                           
+
+                            <img src="{% static 'app/photos/believeus.png' %}" width="304" height="336" loading="lazy" alt="Guaranteed PURE"
+                                 class="card-icon">
+
+                            <h3 class="h3 card-title">Guaranteed PURE</h3>
+
+                            <p class="card-text">
+                                All Grace formulations adhere to strict purity standards and will never contain harsh or toxic
+                                ingredients
+                            </p>
+
+                        </div>
+                    </li>
+
+                    <li class="flex-item">
+                        <div class="feature-card">
+
+                            <img src="{% static 'app/photos/nonntoxic.png' %}" width="204" height="236" loading="lazy"
+                                 alt="Completely Cruelty-Free" class="card-icon">
+
+                            <h3 class="h3 card-title">Completely Cruelty-Free</h3>
+
+                            <p class="card-text">
+                                All Grace formulations adhere to strict purity standards and will never contain harsh or toxic
+                                ingredients
+                            </p>
+
+                        </div>
+                    </li>
+
+                    <li class="flex-item">
+                        <div class="feature-card">
+
+                            <img src="{% static 'app/photos/ecofi.png' %}" width="204" height="236" loading="lazy"
+                                 alt="Ingredient Sourcing" class="card-icon">
+
+                            <h3 class="h3 card-title">Ingredient Sourcing</h3>
+
+                            <p class="card-text">
+                                All Grace formulations adhere to strict purity standards and will never contain harsh or toxic
+                                ingredients
+                            </p>
+
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </section>
+
+
+
+
+
+    </article>
+</main>
+
+
+
+
+
+<!--
+  - #FOOTER
+-->
+
+<footer class="footer" data-section>
+    <div class="container">
+
+        <div class="footer-top">
+
+            <ul class="footer-list">
+
+                <li>
+                    <p class="footer-list-title">Company</p>
+                </li>
+
+                <li>
+                    <p class="footer-list-text">
+                        Find a location nearest you. See <a href="https://www.google.kz/maps" class="link">Our Stores</a>
+                    </p>
+                </li>
+
+                <li>
+                    <p class="footer-list-text bold">+7 705 277 93 13</p>
+                </li>
+
+                <li>
+                    <p class="footer-list-text">loveyourself@romand.com</p>
+                </li>
+
+            </ul>
+
+            <ul class="footer-list">
+
+                <li>
+                    <p class="footer-list-title">Useful links</p>
+                </li>
+
+                <li>
+                    <a href="https://romand.us/" class="footer-link">New Products</a>
+                </li>
+
+                <li>
+                    <a href="{% url 'app:home' %}" class="footer-link">Best Sellers</a>
+                </li>
+
+
+                <li>
+                    <a href="https://www.youtube.com/watch?v=GFq6wH5JR2A" class="footer-link">Online Gift Card</a>
+                </li>
+
+            </ul>
+
+            <ul class="footer-list">
+
+                <li>
+                    <p class="footer-list-title">Infomation</p>
+                </li>
+
+                <li>
+                    <a href="https://www.youtube.com/watch?v=IfrDMJU1TcI" class="footer-link">Start a Return</a>
+                </li>
+
+                <li>
+                    <a href="https://www.youtube.com/watch?v=LyRBIeAw8ak" class="footer-link">Contact Us</a>
+                </li>
+
+                <li>
+                    <a href="{% url 'app:faq' %}" class="footer-link">Shipping FAQ</a>
+                </li>
+
+                <li>
+                    <a href="{% url 'app:faq' %}" class="footer-link">Terms & Conditions</a>
+                </li>
+
+                <li>
+                    <a href="{% url 'app:faq' %}" class="footer-link">Privacy Policy</a>
+                </li>
+
+            </ul>
+
+            <div class="footer-list">
+
+                <p class="newsletter-title">Good emails.</p>
+
+                <p class="newsletter-text">
+                    Enter your email below to be the first to know about new collections and product launches.
+                </p>
+
+                <form action="" class="newsletter-form">
+                    <input type="email" name="email_address" placeholder="Enter your email address" required
+                           class="email-field">
+
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <div class="wrapper">
+                <p class="copyright">
+                    &copy; 2023 damiraaminaaiym
+                </p>
+
+                <ul class="social-list">
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.instagram.com/romandyou/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==" class="social-link">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.youtube.com/@romand8164" class="social-link">
+                            <ion-icon name="logo-youtube"></ion-icon>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <a href="#" class="logo">
+                <img src="{% static 'app/photos/ромчик.png' %}" width="179" height="26" loading="lazy" alt="Glowing">
+            </a>
+
+
+        </div>
+
+    </div>
+</footer>
+
+
+
+
+
+<!--
+  - #BACK TO TOP
+-->
+
+<a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+</a>
+
+
+
+
+
+<!--
+  - custom js link
+-->
+<script src="{% static 'app/js/script.js' %}" defer></script>
+
+<!--
+  - ionicon link
+-->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

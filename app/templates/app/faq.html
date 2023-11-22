@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="{% static 'app/faq.css' %}">
+
+    <!-- =====Fontawesome CDN Link===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+   <title>romand-love yourself</title>
+</head>
+<body>
+    <div class="accordion">
+        <div class="accordion-content">
+            <header>
+                <span class="title">What are your shipping methods?</span>
+                <i class="fa-solid fa-plus"></i>
+            </header>
+
+            <p class="description">
+                We offer standard and expedited shipping options. Standard shipping generally takes [X] days, while expedited shipping delivers within [5] days. The exact timeframes may vary based on your location.
+            </p>
+        </div>
+
+        <div class="accordion-content">
+            <header>
+                <span class="title">Do you ship internationally? </span>
+                <i class="fa-solid fa-plus"></i>
+            </header>
+
+            <p class="description">
+                Yes, we do! We offer international shipping to several countries. Shipping costs and delivery times vary based on the destination. 
+            </p>
+        </div>
+        <div class="accordion-content">
+            <header>
+                <span class="title">How can I track my order?</span>
+                <i class="fa-solid fa-plus"></i>
+            </header>
+
+            <p class="description">
+                Once your order has been shipped, you will receive a confirmation email with a tracking number and a link to track your package. You can also log in to your account on our website to check the status of your order.
+        </div>
+        <div class="accordion-content">
+            <header>
+                <span class="title">What if my package is lost or damaged?</span>
+                <i class="fa-solid fa-plus"></i>
+            </header>
+
+            <p class="description">
+                In the rare event that your package is lost or damaged during transit, please contact our customer support team immediately. We will work with the shipping carrier to resolve the issue and ensure you receive a replacement or a refund.
+            </p>
+        </div>
+    </div>
+    
+    <script src="{% static 'app/js/faq.js' %}"></script>
+</body>
+</html>
